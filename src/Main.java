@@ -43,56 +43,6 @@ import es.usc.citius.hipster.model.problem.SearchProblem;
 
 public class Main {
 
-	/*
-	 * public static void graphHopper() { // create one GraphHopper instance
-	 * GraphHopper hopper = new GraphHopperOSM().forServer(); String osmFile =
-	 * "C://Users//manke//Documents//TMC projekt//map.osm";
-	 * hopper.setDataReaderFile(osmFile); // where to store graphhopper files?
-	 * String graphFolder = "C://Users//manke//Documents//TMC projekt//graph";
-	 * hopper.setGraphHopperLocation(graphFolder);
-	 * hopper.setEncodingManager(EncodingManager.create("car"));
-	 * 
-	 * // see docs/core/profiles.md to learn more about profiles hopper.setProfiles(
-	 * new Profile("car").setVehicle("car").setWeighting("fastest") ); // this
-	 * enables speed mode for the profile we call "car" here
-	 * hopper.getCHPreparationHandler().setCHProfiles( new CHProfile("car") );
-	 * 
-	 * // now this can take minutes if it imports or a few seconds for loading // of
-	 * course this is dependent on the area you import hopper.importOrLoad();
-	 * 
-	 * // simple configuration of the request object double lonFrom=18.602856,
-	 * lonTo=18.607562, latFrom=54.320462, latTo=54.323349; GHRequest req = new
-	 * GHRequest(latFrom, lonFrom, latTo, lonTo). // note that we have to specify
-	 * which profile we are using even when there is only one like here
-	 * setProfile("car"). setLocale(Locale.US); GHResponse rsp = hopper.route(req);
-	 * 
-	 * // first check for errors if(rsp.hasErrors()) { // handle them! //
-	 * rsp.getErrors() return; }
-	 * 
-	 * // use the best path, see the GHResponse class for more possibilities.
-	 * PathWrapper path = rsp.getBest();
-	 * 
-	 * // points, distance in meters and time in millis of the full path PointList
-	 * pointList = path.getPoints(); double distance = path.getDistance(); long
-	 * timeInMs = path.getTime();
-	 * 
-	 * InstructionList il = path.getInstructions(); // iterate over every turn
-	 * instruction for(Instruction instruction : il) { instruction.getDistance(); }
-	 * 
-	 * }
-	 */
-
-	/*
-	 * public static void graphHopper2() { FlagEncoder encoder = new
-	 * CarFlagEncoder(); EncodingManager em = EncodingManager.create(encoder);
-	 * GraphBuilder gb = new
-	 * GraphBuilder(em).setLocation("graphhopper_folder").setStore(true);
-	 * GraphStorage graph = gb.create(); // Make a weighted edge between two nodes.
-	 * EdgeIteratorState edge = graph.edge(fromId, toId);
-	 * edge.setDistance(distance); edge.setFlags(encoder.setProperties(speed, true,
-	 * true)); // Flush to disc graph.flush(); GraphStorage graph = gb.load(); }
-	 */
-
 	public static void graphHopper(Graph g, int VERTICES_COUNT) {
 		FlagEncoder encoder = new CarFlagEncoder();
 		EncodingManager em = EncodingManager.create(encoder);
