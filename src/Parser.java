@@ -49,6 +49,7 @@ public class Parser {
 
 				graph.vertices.get(count).x = a;
 				graph.vertices.get(count).y = b;
+				count++;
 			}
 		}
 		System.out.println(graph.edges.size()+" edges found");

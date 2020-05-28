@@ -4,8 +4,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PSJAVA"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hipster"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/GraphHopper"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PsJava"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jgrapht"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/GraphHopper"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
