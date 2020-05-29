@@ -116,14 +116,7 @@ public class Main {
 			DefaultWeightedEdge dwe = graph.addEdge(edge.firstId, edge.secondId);
 			graph.setEdgeWeight(dwe, edge.weight);
 		}
-		AStarAdmissibleHeuristic<Integer> heuristic = new AStarAdmissibleHeuristic<Integer>() {
-			@Override
-			public double getCostEstimate(Integer sourceVertex, Integer targetVertex) {
-				// return
-				// g.vertices.get(sourceVertex).findDistance(g.vertices.get(targetVertex));
-				return 0.0;
-			}
-		};
+		
 		if(isDijkstra) {
 			DijkstraShortestPath<Integer, DefaultWeightedEdge> dijkstraShortestPath = new DijkstraShortestPath<Integer, DefaultWeightedEdge>(
 					graph);
@@ -131,6 +124,13 @@ public class Main {
 			System.out.println(shortestPath.toString());
 		}
 		else {
+			AStarAdmissibleHeuristic<Integer> heuristic = new AStarAdmissibleHeuristic<Integer>() {
+				@Override
+				public double getCostEstimate(Integer sourceVertex, Integer targetVertex) {
+					//return 	g.vertices.get(sourceVertex).findDistance(g.vertices.get(targetVertex));
+					return 0.0;
+				}
+			};
 			AStarShortestPath<Integer, DefaultWeightedEdge> astarShortestPath = new AStarShortestPath<Integer, DefaultWeightedEdge>(
 					graph, heuristic);
 			List<Integer> shortestPath = astarShortestPath.getPath(0, VERTICES_COUNT - 1).getVertexList();
@@ -145,7 +145,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		long startTime, endTime, timeElapsed;
-		int VERTICES_COUNT = 100;
+		int VERTICES_COUNT = 1000000;
 		// Let's construct a simple graph.
 		String path = "C:/Users/manke/Documents/TMC projekt/triangular/";
 		Graph g = Parser.parse(path + "data" + VERTICES_COUNT + ".txt", path + "vertices" + VERTICES_COUNT + ".txt");
@@ -157,12 +157,12 @@ public class Main {
 
 		System.out.println("psjava execution time in milliseconds : " + timeElapsed / 1000000);
 
-		startTime = System.nanoTime();
+		/*startTime = System.nanoTime();
 		jgrapht(g, VERTICES_COUNT, true);
 		endTime = System.nanoTime();
 		timeElapsed = endTime - startTime;
 
-		System.out.println("jgrapht Dijkstra execution time in milliseconds : " + timeElapsed / 1000000);
+		System.out.println("jgrapht Dijkstra execution time in milliseconds : " + timeElapsed / 1000000);*/
 		
 		startTime = System.nanoTime();
 		jgrapht(g, VERTICES_COUNT, false);
